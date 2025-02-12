@@ -34,7 +34,8 @@ Monitoring: The script enters a loop where it continuously checks the log file f
 
 Reading Logs: It reads only the new logs added since the last read operation. The last read position of the file is stored for the next checking.
 
-Processing Logs: The new logs are appended to the DataFrame, and the script filters logs within a specific time interval. This is necessary to avoid old logs. Also, due to the 5-minute delay some logs can suffer, and the time range used to execute the parsing is also delayed 5 minutes. Hence, during this 5-minute interval, some new logs can read from the file, yet they shouldn't be parsed in the current execution. These logs are filtered and stored for the next execution. 
+Processing Logs: The new logs are appended to the DataFrame, and the script filters logs within a specific time interval. This is necessary to avoid old logs. Also, due to the 5-minute delay some logs can suffer, the time range used to execute the parsing is also delayed 5 minutes. Hence, during this 5-minute interval(between the current time and the end of the parsing time interval), some new logs can be read from the file, yet they shouldn't be parsed in the current execution. These logs are filtered and stored for the next execution. 
+
 Analyzing Connections: The script analyzes the connections made by the specified host and prints the results.  
 
 Sleep: The script waits for a specified interval (CHECK_INTERVAL) before checking the log file again.  
