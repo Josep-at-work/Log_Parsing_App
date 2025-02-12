@@ -27,7 +27,7 @@ Default variable values:
 - host name: `host1`
 - check interval: `1h`
 
-###How It Works
+### How It Works
 Initialization: The script initializes an empty DataFrame (log_df) to store the logs.  
 Monitoring: The script enters a loop where it continuously checks the log file for new entries.  
 Reading Logs: It reads only the new logs added since the last read operation. The last read position of the file is stored for the next checking.
