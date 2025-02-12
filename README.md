@@ -33,3 +33,12 @@ Rest of files:
 - Testing: Unfinished version of a streamlit app to monitor a log file in real-time using [watchdog](https://pypi.org/project/watchdog/) python library.
 - process.ipynb: notebook with some analysis and testing of python functions used in the logs parsing.
 - requirements.txt: python libraries installed on the project's environment.
+
+--------------
+
+## Solution Diagrams
+
+Part 1:
+
+![image](https://github.com/user-attachments/assets/eb5c2cb9-db32-4289-9d68-72a867515e12)
+
