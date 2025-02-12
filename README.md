@@ -29,11 +29,21 @@ Default variable values:
 
 ### How It Works
 Initialization: The script initializes an empty DataFrame (log_df) to store the logs.  
+
 Monitoring: The script enters a loop where it continuously checks the log file for new entries.  
+
 Reading Logs: It reads only the new logs added since the last read operation. The last read position of the file is stored for the next checking.
+
 Processing Logs: The new logs are appended to the DataFrame, and the script filters logs within a specific time interval. This is necessary to avoid old logs. Also, due to the 5-minute delay some logs can suffer, and the time range used to execute the parsing is also delayed 5 minutes. Hence, during this 5-minute interval, some new logs can read from the file, yet they shouldn't be parsed in the current execution. These logs are filtered and stored for the next execution. 
 Analyzing Connections: The script analyzes the connections made by the specified host and prints the results.  
+
 Sleep: The script waits for a specified interval (CHECK_INTERVAL) before checking the log file again.  
+
+**Notes**   
+Dependencies - Ensure that the utils module is note deleted from the root directory.   
+The script assumes that the log file is formatted with three columns: timestamp, host1, and host2.   
+The script is designed to run indefinitely. To stop it, use Ctrl+C.    
+If the log file is not found, the script will terminate and print an error message.    
 
 **Directory**
 - streaminglogs.py: Main script. The script runs indefinitely until manually stopped or if the log file is not found.
