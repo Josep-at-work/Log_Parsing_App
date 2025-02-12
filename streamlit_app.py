@@ -11,7 +11,7 @@ if "new_file" not in st.session_state:
 if "file_uploaded" not in st.session_state:
     st.session_state.file_uploaded = None
     
-st.title("Pars Log File")
+st.title("Parse Log File")
 
 # Input Parameters Example
 st.markdown("""
