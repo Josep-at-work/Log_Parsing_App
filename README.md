@@ -20,11 +20,11 @@ Input parameters are a time range and a valid hostname. Once this parameters are
 
 ## Part 2: Log Monitoring Script
 
-The main script is designed to monitor a log file for new entries, parse the logs, and provide insights into the connections made by a specified host. It continuously checks the log file at regular intervals(batch processing), processes new logs, and prints relevant information about the connections. The host name, log file path, and check interval are defined at the beginning of the script. Edit the script to modify any of them, save, and execute.
+The main script is designed to monitor a log file for new entries, parse the logs, and provide insights into the connections made by a specified host. It continuously checks the log file at regular intervals(batch processing), processes new logs, and prints relevant information about the connections. The hostname, log file path, and check interval are defined at the beginning of the script. Edit the script to modify any of them, save, and execute.
 
 Default variable values: 
 - log file: `log_test2.txt`
-- host name: `host1`
+- hostname: `host1`
 - check interval: `1h`
 
 ### How It Works
@@ -41,14 +41,14 @@ Analyzing Connections: The script analyzes the connections made by the specified
 Sleep: The script waits for a specified interval (CHECK_INTERVAL) before checking the log file again.  
 
 **Notes**   
-Dependencies - Ensure that the utils module is note deleted from the root directory.   
+Dependencies - Ensure that the utils module is not deleted from the root directory.   
 The script assumes that the log file is formatted with three columns: timestamp, host1, and host2.   
 The script is designed to run indefinitely. To stop it, use Ctrl+C.    
 If the log file is not found, the script will terminate and print an error message.    
 
 **Directory**
 - streaminglogs.py: Main script. The script runs indefinitely until manually stopped or if the log file is not found.
-- utils.py: Module of functions used in the streminglogs script.
+- utils.py: Module of functions used in the streaming logs script.
 
 --------------
 
@@ -65,4 +65,9 @@ Rest of files:
 Part 1:
 
 ![image](https://github.com/user-attachments/assets/eb5c2cb9-db32-4289-9d68-72a867515e12)
+
+Part 2:
+
+![image](https://github.com/user-attachments/assets/7911949b-e8a7-482a-a861-7570044b2f63)
+
 
