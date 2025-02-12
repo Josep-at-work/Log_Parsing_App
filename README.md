@@ -18,12 +18,25 @@ Input parameters are a time range and a valid hostname. Once this parameters are
 - streamlit_app.py: Logic of the streamlit app.
 - utils.py: Module of functions used in the streamlit app logic.
 
-## Part 2
+## Part 2: Log Monitoring Script
 
-Script that monitors a log file to 
+The main script is designed to monitor a log file for new entries, parse the logs, and provide insights into the connections made by a specified host. It continuously checks the log file at regular intervals(batch processing), processes new logs, and prints relevant information about the connections. The host name, log file path, and check interval are defined at the beginning of the script. Edit the script to modify any of them, save, and execute.
+
+Default variable values: 
+- log file: `log_test2.txt`
+- host name: `host1`
+- check interval: `1h`
+
+###How It Works
+Initialization: The script initializes an empty DataFrame (log_df) to store the logs.  
+Monitoring: The script enters a loop where it continuously checks the log file for new entries.  
+Reading Logs: It reads only the new logs added since the last read operation. The last read position of the file is stored for the next checking.
+Processing Logs: The new logs are appended to the DataFrame, and the script filters logs within a specific time interval. This is necessary to avoid old logs. Also, due to the 5-minute delay some logs can suffer, and the time range used to execute the parsing is also delayed 5 minutes. Hence, during this 5-minute interval, some new logs can read from the file, yet they shouldn't be parsed in the current execution. These logs are filtered and stored for the next execution. 
+Analyzing Connections: The script analyzes the connections made by the specified host and prints the results.  
+Sleep: The script waits for a specified interval (CHECK_INTERVAL) before checking the log file again.  
 
 **Directory**
-- streaminglogs.py: a script that monitors a log file once it is executed and reports some statistics once every hour. The host name, log file path, and check interval are defined at the beginning of the script. Edit the script to modify any of them, save, and execute.
+- streaminglogs.py: Main script. The script runs indefinitely until manually stopped or if the log file is not found.
 - utils.py: Module of functions used in the streminglogs script.
 
 --------------
