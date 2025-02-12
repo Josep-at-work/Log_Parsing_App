@@ -9,8 +9,10 @@ uv pip install -r requirements.txt #install all
 
 ## Part 1
 
-Streamlit app where the user can parse logs from a default log file, or enter a new log file.
-Input parameters are a time range and a valid hostname. 
+Log Parsing UI, [here](https://logparsingapp-8fpxwvlomwegogubwkje7x.streamlit.app/)
+
+Streamlit app where the user can parse logs from a default log file, or enter a new log file (.txt or .log).
+Input parameters are a time range and a valid hostname. Once this parameters are entered, a Pare Logs button will appear to execute the parsing. Results will be shown in the main page.
 
 **Directory**
 - streamlit_app.py: Logic of the streamlit app.
