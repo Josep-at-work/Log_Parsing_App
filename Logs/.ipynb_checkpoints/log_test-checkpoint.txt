@@ -1,0 +1,9 @@
+1707145800 hostA hostB
+1707145830 hostC hostD
+1707145845 hostB hostE
+1707145805 hostF hostG
+1707145900 hostD hostA
+1707145810 hostE hostF
+1707145990 hostG hostC
+1707145895 hostB hostC
+1707146005 hostD hostE
