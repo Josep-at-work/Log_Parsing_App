@@ -14,6 +14,9 @@ Log Parsing UI, [here](https://logparsingapp-8fpxwvlomwegogubwkje7x.streamlit.ap
 Streamlit app where the user can parse logs from a default log file, or enter a new log file (.txt or .log).
 Input parameters are a time range and a valid hostname. Once this parameters are entered, a Pare Logs button will appear to execute the parsing. Results will be shown in the main page.
 
+**NOTE**: The app is connected to the log_test1.txt file by default. The example found on the main page of the UI works well with this file. 
+However, users can download the other files from the Logs directory (or use any other log files with the same structure), and use them to parse logs. When changing the file take into account that the time range may vary - the time range for the new file will be displayed in the sidebar, also the hostname may vary, check a valid hostname opening the logs file.
+
 **Directory**
 - streamlit_app.py: Logic of the streamlit app.
 - utils.py: Module of functions used in the streamlit app logic.
